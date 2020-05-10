@@ -33,4 +33,4 @@ jobs:
         password: ${{ secrets.REGISTRY_PASSWORD }}
 
     - name: Push to Docker Hub
-      run: docker push georgemclaughlin/sql-crawler
+      run: docker push georgemclaughlin/sql-crawler:latest

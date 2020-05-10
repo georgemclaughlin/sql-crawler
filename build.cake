@@ -1,6 +1,7 @@
 #addin nuget:?package=Cake.Npm&version=0.17.0
 
 var name = "sql-crawler";
+var dockerRepoBase = Argument("dockerRepoBase", "georgemclaughlin")
 var solution = "./src/" + name + ".sln";
 var target = Argument("target", "Default");
 var configuration = Argument("configuration", "Release");
@@ -62,7 +63,7 @@ Task("Build-Docker")
     .Does(() =>
 {
     var srcDirectory = Directory(".\\src");
-    var exitCode = StartProcess("docker", "build " + srcDirectory + " -t " + name);
+    var exitCode = StartProcess("docker", "build " + srcDirectory + " -t " + georgemclaughlin/name);
     if (exitCode != 0)
         throw new Exception("Failed.");
 });
