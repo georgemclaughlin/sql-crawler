@@ -25,3 +25,12 @@ jobs:
     # Runs a single command using the runners shell
     - name: Build Docker Image
       run: pwsh ./build.ps1 -target build-docker
+
+    - name: Set login for Docker Hub
+      uses: azure/docker-login@v1
+      with:
+        username: ${{ secrets.REGISTRY_USERNAME }}
+        password: ${{ secrets.REGISTRY_PASSWORD }}
+
+    - name: Push to Docker Hub
+      run: docker push georgemclaughlin/sql-crawler
