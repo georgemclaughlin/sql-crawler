@@ -1,7 +1,6 @@
 #addin nuget:?package=Cake.Npm&version=0.17.0
 
 var name = "sql-crawler";
-var dockerRepoBase = Argument("dockerRepoBase", "georgemclaughlin")
 var solution = "./src/" + name + ".sln";
 var target = Argument("target", "Default");
 var configuration = Argument("configuration", "Release");
