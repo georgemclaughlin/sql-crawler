@@ -62,7 +62,7 @@ Task("Build-Docker")
     .Does(() =>
 {
     var srcDirectory = Directory(".\\src");
-    var exitCode = StartProcess("docker", "build " + srcDirectory + " -t " + georgemclaughlin/name);
+    var exitCode = StartProcess("docker", "build " + srcDirectory + " -t georgemclaughlin/" + name);
     if (exitCode != 0)
         throw new Exception("Failed.");
 });
